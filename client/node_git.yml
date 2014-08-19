@@ -1,0 +1,25 @@
+---
+- hosts: default
+  tasks:
+    - name: apt-get install python-software-properties
+      apt: pkg=python-software-properties update_cache=true
+      sudo: true
+
+    - name: add-apt-repository ppa:chris-lea/node.js
+      apt_repository: repo=ppa:chris-lea/node.js
+      sudo: true
+
+    - name: apt-get install node
+      apt: pkg=nodejs
+      sudo: true
+
+    - name: add-apt-repository ppa:git-core/ppa
+      apt_repository: repo=ppa:git-core/ppa
+      sudo: true
+
+    - name: apt-get install git
+      apt: pkg=git
+      sudo: true
+
+    - name: git checkout from github
+      git: repo=https://github.com/ledsun/SandBox.git dest=/home/vagrant/SandBox
