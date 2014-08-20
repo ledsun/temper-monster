@@ -22,4 +22,4 @@
       sudo: true
 
     - name: git checkout from github
-      git: repo=https://github.com/ledsun/SandBox.git dest=/home/vagrant/SandBox
+      git: repo=https://github.com/ledsun/temper-monster.git dest=/home/vagrant/temper-monster
